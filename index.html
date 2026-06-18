@@ -2510,11 +2510,12 @@ function updateAmountDisplay(val){
                 <label class="sim-label">세율 &nbsp;<span id="sim-tax-display" style="font-size:1rem;font-weight:700;color:var(--accent);">15.4%</span> <span class="sim-hint">금융소득종합과세 대상 최대 49.5%</span></label>
                 <input type="range" id="sim-tax-rate" class="tax-slider" min="0" max="49.5" step="0.1" value="15.4" oninput="syncTaxDisplay();runSimulation();">
               </div>
-              <div style="display:flex;gap:.4rem;flex-wrap:wrap;">
-                <button onclick="setTax(15.4)" style="padding:.3rem .65rem;font-size:.7rem;font-weight:600;border:1.5px solid var(--line);border-radius:3px;background:white;cursor:pointer;font-family:var(--sans);color:var(--ink);">15.4%</button>
-                <button onclick="setTax(26.4)" style="padding:.3rem .65rem;font-size:.7rem;font-weight:600;border:1.5px solid var(--line);border-radius:3px;background:white;cursor:pointer;font-family:var(--sans);color:var(--ink);">26.4% (종소세 24%)</button>
-                <button onclick="setTax(38.5)" style="padding:.3rem .65rem;font-size:.7rem;font-weight:600;border:1.5px solid var(--line);border-radius:3px;background:white;cursor:pointer;font-family:var(--sans);color:var(--ink);">38.5% (종소세 35%)</button>
-                <button onclick="setTax(49.5)" style="padding:.3rem .65rem;font-size:.7rem;font-weight:600;border:1.5px solid var(--line);border-radius:3px;background:white;cursor:pointer;font-family:var(--sans);color:var(--ink);">49.5% (종소세 45%)</button>
+              <div style="position:relative;height:1.2rem;margin-top:.2rem;font-size:.63rem;color:var(--ink-faint);">
+                <span style="position:absolute;left:0%;">0%</span>
+                <span style="position:absolute;left:31.1%;transform:translateX(-50%);">15.4%</span>
+                <span style="position:absolute;left:53.3%;transform:translateX(-50%);">26.4%</span>
+                <span style="position:absolute;left:77.8%;transform:translateX(-50%);">38.5%</span>
+                <span style="position:absolute;right:0%;">49.5%</span>
               </div>
             </div>
             <div id="simChartBox" style="display:none;" class="sim-chart-box">
