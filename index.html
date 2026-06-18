@@ -2056,13 +2056,6 @@ function runSimulation(){
     }
     bB=bB*(1+eRate/12-isoFee/12)+contrib;
 
-    // ISA 5년 만기 처리: 의무보유기간마다 세금 정산 후 재가입
-    if(m%60===0){
-      var _isaProfit=Math.max(0,bI-isaPrin);
-      bI-=Math.max(0,_isaProfit-2000000)*0.099;
-      isaPrin=bI;
-    }
-
     if(m%12===0){
       var yr=m/12;
       labels.push(yr+'년');
@@ -2529,7 +2522,7 @@ function updateAmountDisplay(val){
             </div>
             <div class="sim-note">
               ※ <strong>보험</strong>: 사업비 차감 후 적립. 추가납입은 사업비 없이 소액 수수료만. 금액조건+10년 유지 시 이자소득 비과세.<br>
-              ※ <strong>ISA</strong>: 5년 주기 만기 해지 재가입 가정. 매 만기 시 200만원 비과세, 초과분 9.9% 분리과세.<br>
+              ※ <strong>ISA</strong>: 계좌 1개로 장기 운용 가정 (200만원 비과세, 초과분 9.9% 분리과세). 실제로는 최소 3년 후 재가입 시 비과세 한도가 살아나므로 실제 혜택은 더 클 수 있음. 단, 금융소득종합과세 대상자는 ISA 개설·연장 불가.<br>
               ※ <strong>증권계좌</strong>: 수익에 설정 세율 과세. ETF 매매차익 실제 과세 방식과 다를 수 있음.<br>
               ※ 모든 수치는 입력 가정치 기반의 참고값입니다.
             </div>
