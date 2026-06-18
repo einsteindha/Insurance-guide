@@ -2085,8 +2085,8 @@ function runSimulation(){
 
   var finals=[
     {name:'변액보험 (실적배당형)',val:fV_,note:insNote},
-    {name:'ISA계좌 활용 시',val:fI_,note:isaBrkPrin>0?'ISA 한도 초과 — 초과분 일반과세':'200만 비과세 + 9.9%'},
     {name:'일반 증권계좌',val:fB_,note:Math.round(taxR*1000)/10+'% 과세'},
+    {name:'ISA계좌 활용 시',val:fI_,note:isaBrkPrin>0?'ISA 한도 초과 — 초과분 일반과세':'200만 비과세 + 9.9%'},
   ];
   var best=Math.max.apply(null,finals.map(function(r){return r.val;}));
 
@@ -2123,8 +2123,8 @@ function runSimulation(){
     type:'line',
     data:{labels:labels,datasets:[
       {label:'변액보험',data:dV,borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,.07)',borderWidth:2,tension:.3,fill:true,pointRadius:0,pointHoverRadius:4},
-      {label:'ISA계좌',data:dI,borderColor:'#1a6b47',backgroundColor:'rgba(26,107,71,.07)',borderWidth:2,tension:.3,fill:true,pointRadius:0,pointHoverRadius:4},
       {label:'증권계좌',data:dB,borderColor:'#2980b9',backgroundColor:'rgba(41,128,185,.07)',borderWidth:2,tension:.3,fill:true,pointRadius:0,pointHoverRadius:4},
+      {label:'ISA계좌 활용 시',data:dI,borderColor:'#1a6b47',backgroundColor:'rgba(26,107,71,.07)',borderWidth:2,tension:.3,fill:true,pointRadius:0,pointHoverRadius:4},
     ]},
     options:{
       responsive:true,maintainAspectRatio:true,aspectRatio:1.8,
