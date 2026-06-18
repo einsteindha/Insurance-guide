@@ -347,7 +347,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
 .sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;}
 .sim-field{display:flex;flex-direction:column;gap:.2rem;}
 .sim-label{font-size:.73rem;font-weight:600;color:var(--ink-light);}
-.sim-hint{font-size:.63rem;color:var(--ink-faint);font-weight:400;}
+.sim-hint{display:block;font-size:.63rem;color:var(--ink-faint);font-weight:400;margin-top:.15rem;}
 .sim-input{padding:.5rem .75rem;border:1.5px solid var(--line);border-radius:4px;font-size:.88rem;font-family:var(--sans);background:white;color:var(--ink);width:100%;box-sizing:border-box;}
 .sim-input:focus{outline:none;border-color:var(--ink-light);}
 .sim-divider{height:1px;background:var(--line);margin:.6rem 0 .9rem;}
@@ -2551,16 +2551,17 @@ function updateAmountDisplay(val){
             <ul>
               <li>원금 최저 보증</li>
               <li>공시이율 연동 — 예측 가능</li>
-              <li>조건 충족 시 이자 비과세</li>
+              <li>조건 충족 시 보험차익 과세제외</li>
+              <li>추가납입 활용 시 사업비 절감</li>
             </ul>
           </div>
           <div class="sav-cons">
             <div class="sav-clbl">단점</div>
             <ul>
-              <li>초기 사업비 (120개월 적용)</li>
+              <li>초기 높은 사업비로 복리효과 저하</li>
               <li>수익률 물가상승률 하회 가능</li>
               <li>조기 해지 시 원금 손실</li>
-              <li>자금 유동성 없음</li>
+              <li>중단기 자금 유동성 제약</li>
             </ul>
           </div>
         </div>
@@ -2571,17 +2572,17 @@ function updateAmountDisplay(val){
             <ul>
               <li>수익률 상한 없음</li>
               <li>인플레이션 대응 가능</li>
-              <li>조건 충족 시 수익 비과세</li>
+              <li>조건 충족 시 보험차익 과세제외</li>
               <li>추가납입 활용 시 사업비 절감</li>
             </ul>
           </div>
           <div class="sav-cons">
             <div class="sav-clbl">단점</div>
             <ul>
-              <li>초기 사업비 (120개월 적용)</li>
+              <li>초기 높은 사업비로 복리효과 저하</li>
               <li>특별계정 운용보수 연 0.5~1%</li>
               <li>원금 미보장</li>
-              <li>자금 유동성 없음</li>
+              <li>중단기 자금 유동성 제약</li>
             </ul>
           </div>
         </div>
