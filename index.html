@@ -1997,22 +1997,23 @@ function setTax(v){
 }
 
 function runSimulation(){
+  var pv=function(id,d){var v=document.getElementById(id).value;return v===''?d:parseFloat(v);};
   var payType  = document.getElementById('sim-paytype').value;
   var P        = parseFloat(document.getElementById('sim-amount').value)||500000;
   var accYrs   = payType==='lump'?0:parseInt(document.getElementById('sim-acc-years').value)||10;
   var totYrs   = parseInt(document.getElementById('sim-years').value)||20;
   if(totYrs<accYrs)totYrs=accYrs;
-  var eRate    = (parseFloat(document.getElementById('sim-equity-rate').value)||7)/100;
+  var eRate    = pv('sim-equity-rate',7)/100;
   var _taxVal  = document.getElementById('sim-tax-rate').value;
   var taxR     = (_taxVal===''?15.4:parseFloat(_taxVal))/100;
-  var vFee     = (parseFloat(document.getElementById('sim-var-fee').value)||9)/100;
-  var vMgmt    = (parseFloat(document.getElementById('sim-var-mgmt').value)||0.5)/100;
+  var vFee     = pv('sim-var-fee',9)/100;
+  var vMgmt    = pv('sim-var-mgmt',0.5)/100;
   // 슬라이더값: 기본보험료 대비 추가납입 비율(extraRatio, 0~3.0)
   // 총액 P 고정: extraPct(총 중 추가납입 비율) = extraRatio/(1+extraRatio)
   var extraRatio = (parseFloat(document.getElementById('sim-extra-pct').value)||0)/100;
   var extraPct = extraRatio/(1+extraRatio);
-  var extraFee = (parseFloat(document.getElementById('sim-extra-fee').value)||0.5)/100;
-  var isoFee   = (parseFloat(document.getElementById('sim-isa-fee').value)||0.01)/100;
+  var extraFee = pv('sim-extra-fee',0.5)/100;
+  var isoFee   = pv('sim-isa-fee',0.01)/100;
 
   // 비과세 금액 조건 (총 납입 P 기준, 10년 유지는 루프에서 체크)
   var isNontaxable = payType==='lump' ? (P<=100000000) : (P<=1500000);
